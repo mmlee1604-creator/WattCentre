@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wattcentre.local/schemas/command.schema.json",
+  "title": "WattCentre plug command",
+  "description": "Published to cmnd/<device>/POWER following the Tasmota convention.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["device", "command"],
+  "properties": {
+    "device":  { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "command": { "enum": ["ON", "OFF"] }
+  }
+}
